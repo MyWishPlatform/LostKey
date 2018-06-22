@@ -24,14 +24,14 @@ contract WalletAbi {
 
     function changeRequirement(uint _newRequired) external;
 
-    function isOwner(address _addr) public view returns (bool);
-
-    function hasConfirmed(bytes32 _operation, address _owner) external view returns (bool);
-
     // (re)sets the daily limit. needs many of the owners to confirm. doesn't alter the amount already spent today.
     function setDailyLimit(uint _newLimit) external;
 
-    function execute(address _to, uint _value, bytes _data) external returns (bytes32 o_hash);
+    function execute(address _to, uint _value, bytes _data) external returns (bytes32);
 
-    function confirm(bytes32 _h) public returns (bool o_success);
+    function hasConfirmed(bytes32 _operation, address _owner) external view returns (bool);
+
+    function isOwner(address _addr) public view returns (bool);
+
+    function confirm(bytes32 _h) public returns (bool);
 }
