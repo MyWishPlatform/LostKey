@@ -59,7 +59,7 @@ contract('LostKeyWallet', function (accounts) {
         const wallet = await LostKeyWallet.new(TARGET, [RECIPIENT_1], [100], MINUTE);
         const token = await SimpleToken.new();
         await token.mint(wallet.address, 100);
-        await wallet.tokenBalanceOf(token.address).should.eventually.be.bignumber.equal(100);
+        (await wallet.tokenBalanceOf(token.address)).should.be.bignumber.equal(100);
     });
 
     it('#5 token transfer', async () => {
@@ -69,7 +69,7 @@ contract('LostKeyWallet', function (accounts) {
         await wallet.tokenTransfer(token.address, RECIPIENT_1, 100, { from: RECIPIENT_1 })
             .should.eventually.be.rejected;
         await wallet.tokenTransfer(token.address, RECIPIENT_1, 100, { from: TARGET });
-        await token.balanceOf(RECIPIENT_1).should.eventually.be.bignumber.equal(100);
+        (await token.balanceOf(RECIPIENT_1)).should.be.bignumber.equal(100);
     });
 
     it('#6 token approve', async () => {
@@ -78,8 +78,7 @@ contract('LostKeyWallet', function (accounts) {
         await wallet.tokenApprove(token.address, RECIPIENT_1, 100, { from: RECIPIENT_1 })
             .should.eventually.be.rejected;
         await wallet.tokenApprove(token.address, RECIPIENT_1, 100, { from: TARGET });
-        await wallet.tokenAllowance(token.address, wallet.address, RECIPIENT_1)
-            .should.eventually.be.bignumber.equal(100);
+        (await wallet.tokenAllowance(token.address, wallet.address, RECIPIENT_1)).should.be.bignumber.equal(100);
     });
 
     it('#7 token transferFrom', async () => {
@@ -88,7 +87,7 @@ contract('LostKeyWallet', function (accounts) {
         await token.mint(RECIPIENT_1, 100);
         await token.approve(wallet.address, 100, { from: RECIPIENT_1 });
         await wallet.tokenTransferFrom(token.address, RECIPIENT_1, RECIPIENT_2, 100, { from: TARGET });
-        await token.balanceOf(RECIPIENT_2).should.eventually.be.bignumber.equal(100);
+        (await token.balanceOf(RECIPIENT_2)).should.be.bignumber.equal(100);
     });
 
     it('#8 cannot check before time', async () => {

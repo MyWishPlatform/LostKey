@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:sol": "solhint 'contracts/**/*.sol'",
-    "test": "truffle test"
+    "test": "truffle test \"$@\""
   },
   "devDependencies": {
     "chai-as-promised": "^7.1.1",
