@@ -12,21 +12,22 @@
     "test": "truffle test \"$@\""
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "chai-bignumber": "^2.0.2",
-    "eslint": "^4.19.1",
+    "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "ganache-core": "^2.1.2",
+    "ganache-core": "^2.1.3",
     "solhint": "^1.2.1",
-    "truffle": "^4.1.11"
+    "truffle": "^4.1.13"
   },
   "dependencies": {
-    "last-will": "github:MyWishPlatform/last-will#0.3.1",
+    "last-will": "github:MyWishPlatform/last-will#0.4.0",
     "openzeppelin-solidity": "1.10.0",
-    "sc-library": "github:MyWishPlatform/sc-library#0.3.0"
+    "sc-library": "github:MyWishPlatform/sc-library#0.4.0"
   }
 }
