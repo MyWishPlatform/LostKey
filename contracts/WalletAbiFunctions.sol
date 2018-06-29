@@ -6,8 +6,6 @@ import "./parity/WalletEvents.sol";
 
 
 contract WalletAbiFunctions is WalletAbi, WalletEvents, SoftDestruct {
-    constructor(address _targetUser) public SoftDestruct(_targetUser) {}
-
     // Revokes a prior confirmation of the given operation
     function revoke(bytes32) external onlyTarget {}
 

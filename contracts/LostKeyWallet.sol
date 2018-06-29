@@ -7,7 +7,6 @@ import "./LostKeyERC20Wallet.sol";
 
 contract LostKeyWallet is WalletAbiMembers, WalletAbiFunctions, LostKeyERC20Wallet {
     constructor(address _targetUser, address[] _recipients, uint[] _percents, uint64 _noActivityPeriod) public
-        WalletAbiFunctions(_targetUser)
         LostKeyERC20Wallet(_targetUser, _recipients, _percents, _noActivityPeriod) {
     }
 
