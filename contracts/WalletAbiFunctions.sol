@@ -1,15 +1,12 @@
 pragma solidity ^0.4.23;
 
-import "./MistWallet.sol";
+import "sc-library/contracts/SoftDestruct.sol";
 import "./parity/WalletAbi.sol";
 import "./parity/WalletEvents.sol";
 
 
-contract Wallet is WalletAbi, WalletEvents, MistWallet {
-    uint public m_dailyLimit = 0;
-    uint public m_spentToday = 0;
-
-    constructor(address _targetUser) public MistWallet(_targetUser) {}
+contract WalletAbiFunctions is WalletAbi, WalletEvents, SoftDestruct {
+    constructor(address _targetUser) public SoftDestruct(_targetUser) {}
 
     // Revokes a prior confirmation of the given operation
     function revoke(bytes32) external onlyTarget {}
@@ -45,8 +42,8 @@ contract Wallet is WalletAbi, WalletEvents, MistWallet {
         return true;
     }
 
-    function m_lastDay() public view returns (uint) {
-        return block.timestamp;
+    function isOwner(address _address) public view returns (bool) {
+        return targetUser == _address;
     }
 
     // Gets an owner by 0-indexed position (using numOwners as the count)
