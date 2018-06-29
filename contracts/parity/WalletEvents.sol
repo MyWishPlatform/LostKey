@@ -1,3 +1,5 @@
+pragma solidity ^0.4.23;
+
 //sol Wallet
 // Multi-sig, daily-limited account proxy/wallet.
 // @authors:
@@ -8,9 +10,6 @@
 // use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by
 // some number (specified in constructor) of the set of owners (specified in the constructor, modifiable) before the
 // interior is executed.
-pragma solidity ^0.4.24;
-
-
 contract WalletEvents {
     // EVENTS
 

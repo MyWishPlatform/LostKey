@@ -1,12 +1,15 @@
 pragma solidity ^0.4.23;
 
+import "./MistWallet.sol";
 import "./parity/WalletAbi.sol";
-import "./LostKeyWallet.sol";
+import "./parity/WalletEvents.sol";
 
 
-contract LostKeyParityWallet is WalletAbi, LostKeyWallet {
-    constructor(address _targetUser, address[] _recipients, uint[] _percents, uint64 _noActivityPeriod) public
-        LostKeyWallet(_targetUser, _recipients, _percents, _noActivityPeriod) {}
+contract Wallet is WalletAbi, WalletEvents, MistWallet {
+    uint public m_dailyLimit = 0;
+    uint public m_spentToday = 0;
+
+    constructor(address _targetUser) public MistWallet(_targetUser) {}
 
     // Revokes a prior confirmation of the given operation
     function revoke(bytes32) external onlyTarget {}
@@ -34,35 +37,12 @@ contract LostKeyParityWallet is WalletAbi, LostKeyWallet {
         revert();
     }
 
-    function execute(address _to, uint _value, bytes _data) external onlyTarget returns (bytes32) {
-        sendFundsInternal(_value, _to, _data);
-        return keccak256(msg.data, block.number);
-    }
-
     function hasConfirmed(bytes32, address) external view returns (bool) {
         return true;
     }
 
-    function isOwner(address _addr) public view returns (bool) {
-        return _addr == targetUser;
-    }
-
-    // the number of owners that must confirm the same operation before it is run.
-    function m_required() public pure returns (uint) {
-        return 1;
-    }
-
-    // pointer used to find a free slot in m_owners
-    function m_numOwners() public pure returns (uint) {
-        return 1;
-    }
-
-    function m_dailyLimit() public pure returns (uint) {
-        return 0;
-    }
-
-    function m_spentToday() public pure returns (uint) {
-        return 0;
+    function confirm(bytes32) public onlyTarget returns (bool) {
+        return true;
     }
 
     function m_lastDay() public view returns (uint) {
@@ -75,9 +55,5 @@ contract LostKeyParityWallet is WalletAbi, LostKeyWallet {
             return 0;
         }
         return targetUser;
-    }
-
-    function confirm(bytes32) public onlyTarget returns (bool) {
-        return true;
     }
 }
