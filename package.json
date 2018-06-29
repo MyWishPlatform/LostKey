@@ -4,7 +4,7 @@
   "repository": "https://github.com/MyWishPlatform/lost-key.git",
   "license": "ISC",
   "scripts": {
-    "combine-contracts": "combine-contracts LostKeyWallet LostKeyParityWallet",
+    "combine-contracts": "combine-contracts LostKeyWallet",
     "compile": "truffle compile",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
