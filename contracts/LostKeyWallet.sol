@@ -1,7 +1,7 @@
 pragma solidity ^0.4.23;
 
-import "./WalletAbiMembers.sol";
-import "./WalletAbiFunctions.sol";
+import "sc-library/contracts/wallet/WalletAbiMembers.sol";
+import "sc-library/contracts/wallet/WalletAbiFunctions.sol";
 import "./LostKeyERC20Wallet.sol";
 
 

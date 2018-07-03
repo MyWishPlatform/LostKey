@@ -5,8 +5,8 @@ require('chai')
     .use(require('chai-as-promised'))
     .should();
 
-const { increaseTime, snapshot, revert } = require('sc-library/scripts/evmMethods');
-const { web3async } = require('sc-library/scripts/web3Utils');
+const { increaseTime, snapshot, revert } = require('sc-library/test-utils/evmMethods');
+const { web3async } = require('sc-library/test-utils/web3Utils');
 const getBalance = (address) => web3async(web3.eth, web3.eth.getBalance, address);
 
 const LostKeyERC20Wallet = artifacts.require('./LostKeyERC20Wallet.sol');

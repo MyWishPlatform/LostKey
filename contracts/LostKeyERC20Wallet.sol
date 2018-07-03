@@ -1,7 +1,7 @@
 pragma solidity ^0.4.23;
 
 import "last-will/contracts/LastWill.sol";
-import "./ERC20Wallet.sol";
+import "sc-library/contracts/wallet/ERC20Wallet.sol";
 
 
 contract LostKeyERC20Wallet is LastWill, ERC20Wallet {
