@@ -173,7 +173,7 @@ async-eventemitter@^0.2.2:
   dependencies:
     async "^2.4.0"
 
-"async-eventemitter@github:ahultgren/async-eventemitter#fa06e39e56786ba541c180061dbf2c0a5bbf951c":
+async-eventemitter@ahultgren/async-eventemitter#fa06e39e56786ba541c180061dbf2c0a5bbf951c:
   version "0.2.3"
   resolved "https://codeload.github.com/ahultgren/async-eventemitter/tar.gz/fa06e39e56786ba541c180061dbf2c0a5bbf951c"
   dependencies:
@@ -2811,12 +2811,12 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-"last-will@github:MyWishPlatform/last-will#0.4.0":
-  version "0.4.0"
-  resolved "https://codeload.github.com/MyWishPlatform/last-will/tar.gz/365230044f44d5b4d6de416b71c813ee0d3ea5fa"
+"last-will@github:MyWishPlatform/last-will#0.4.2":
+  version "0.4.2"
+  resolved "https://codeload.github.com/MyWishPlatform/last-will/tar.gz/a348c22d6ab14c5dd440d5c92b1e6d6db5fa7e20"
   dependencies:
     openzeppelin-solidity "1.10.0"
-    sc-library "github:MyWishPlatform/sc-library#0.4.0"
+    sc-library "github:MyWishPlatform/sc-library#0.6.0"
 
 lcid@^1.0.0:
   version "1.0.0"
@@ -3853,15 +3853,9 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, 
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
-"sc-library@github:MyWishPlatform/sc-library#0.4.0":
-  version "0.4.0"
-  resolved "https://codeload.github.com/MyWishPlatform/sc-library/tar.gz/05470c1969cea2137551aaf326b4710195dcab53"
-  dependencies:
-    openzeppelin-solidity "1.10.0"
-
-"sc-library@github:MyWishPlatform/sc-library#0.5.0":
-  version "0.5.0"
-  resolved "https://codeload.github.com/MyWishPlatform/sc-library/tar.gz/0c0d91a950bc67e193ec7b9eec4609d2147fc2a3"
+"sc-library@github:MyWishPlatform/sc-library#0.6.0":
+  version "0.6.0"
+  resolved "https://codeload.github.com/MyWishPlatform/sc-library/tar.gz/d192e3d89f7b6955453efbff980b3016adb229f1"
   dependencies:
     openzeppelin-solidity "1.10.0"
 
