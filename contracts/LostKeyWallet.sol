@@ -1,12 +1,12 @@
 pragma solidity ^0.4.23;
 
+import "sc-library/contracts/wallet/WalletAbiMembers.sol";
+import "sc-library/contracts/wallet/WalletAbiFunctions.sol";
 import "./LostKeyERC20Wallet.sol";
-import "./Wallet.sol";
 
 
-contract LostKeyWallet is LostKeyERC20Wallet, Wallet {
+contract LostKeyWallet is WalletAbiMembers, WalletAbiFunctions, LostKeyERC20Wallet {
     constructor(address _targetUser, address[] _recipients, uint[] _percents, uint64 _noActivityPeriod) public
-        Wallet(_targetUser)
         LostKeyERC20Wallet(_targetUser, _recipients, _percents, _noActivityPeriod) {
     }
 
