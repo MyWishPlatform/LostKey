@@ -2811,9 +2811,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-"last-will@github:MyWishPlatform/last-will#0.4.2":
-  version "0.4.2"
-  resolved "https://codeload.github.com/MyWishPlatform/last-will/tar.gz/a348c22d6ab14c5dd440d5c92b1e6d6db5fa7e20"
+"last-will@github:MyWishPlatform/last-will#0.4.3":
+  version "0.4.3"
+  resolved "https://codeload.github.com/MyWishPlatform/last-will/tar.gz/cdc7a81dbeca23bb8cc20076cc225a1df7863e3b"
   dependencies:
     openzeppelin-solidity "1.10.0"
     sc-library "github:MyWishPlatform/sc-library#0.6.0"
@@ -3856,6 +3856,12 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, 
 "sc-library@github:MyWishPlatform/sc-library#0.6.0":
   version "0.6.0"
   resolved "https://codeload.github.com/MyWishPlatform/sc-library/tar.gz/d192e3d89f7b6955453efbff980b3016adb229f1"
+  dependencies:
+    openzeppelin-solidity "1.10.0"
+
+"sc-library@github:MyWishPlatform/sc-library#0.7.0":
+  version "0.7.0"
+  resolved "https://codeload.github.com/MyWishPlatform/sc-library/tar.gz/26b812c78b058da91551f0a2442f3f3d66249041"
   dependencies:
     openzeppelin-solidity "1.10.0"
 

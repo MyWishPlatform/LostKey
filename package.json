@@ -26,8 +26,8 @@
     "truffle": "^4.1.13"
   },
   "dependencies": {
-    "last-will": "github:MyWishPlatform/last-will#0.4.2",
+    "last-will": "github:MyWishPlatform/last-will#0.4.3",
     "openzeppelin-solidity": "1.10.0",
-    "sc-library": "github:MyWishPlatform/sc-library#0.6.0"
+    "sc-library": "github:MyWishPlatform/sc-library#0.7.0"
   }
 }
